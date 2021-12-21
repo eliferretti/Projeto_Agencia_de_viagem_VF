@@ -1,0 +1,27 @@
+﻿@model IEnumerable<CRUDMVC.Models.Destino>
+
+@{
+    ViewData["Lista_promocao"] = "Lista_promocao";
+}
+
+<div class="container">
+<h1 class="titulo-paginas text-center">Destinos em promoção</h1>
+    <div class="row">
+        <main class="d-flex flex-wrap justify-content-around col-sm-12">
+            @{              
+                foreach (var item in Model)
+                {           
+                    <div class="col-sm-3">
+                        <div class="bg-light text-center rounded m-2 rounded" style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.171);">
+                            <img src="/imagens/turismo.jpg" class="img-fluid mx-auto d-block rounded"/>
+                            <h4 class="px-1">@Html.DisplayFor(modelItem => item.Titulo)</h4>
+                            <p class="px-1 mh-100">@Html.DisplayFor(modelItem => item.Descricao)</p>
+                            <p class="px-1 py-2 bg-danger text-light">Apenas <strong>R$@Html.DisplayFor(modelItem => item.Preco)</strong></p>
+                        </div>
+                    </div>                 
+                }
+            }
+        </main>
+    </div>
+</div>
+

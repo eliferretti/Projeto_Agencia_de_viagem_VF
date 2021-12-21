@@ -1,0 +1,52 @@
+﻿@model CRUDMVC.Models.Pacote
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+<h1 class="titulo-paginas">Editar</h1>
+
+<h4>Pacote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group col-md-3">
+                <label asp-for="Id_cliente" class="control-label">Id cliente</label>
+                <input asp-for="Id_cliente" class="form-control" />
+                <span asp-validation-for="Id_cliente" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Id_destino" class="control-label">Id destino</label>
+                <input asp-for="Id_destino" class="form-control" />
+                <span asp-validation-for="Id_destino" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="DataCompra" class="control-label">Data da compra</label>
+                <input asp-for="DataCompra" class="form-control" />
+                <span asp-validation-for="DataCompra" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="DataViagem" class="control-label">Data da viagem</label>
+                <input asp-for="DataViagem" class="form-control" />
+                <span asp-validation-for="DataViagem" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="Preco" class="control-label">Preço</label>
+                <input asp-for="Preco" class="form-control" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="submit" value="Salvar" class="btn btn-success" style="width:auto"/>
+                 <a class="btn btn-primary" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

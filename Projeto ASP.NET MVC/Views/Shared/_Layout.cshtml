@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rota 46 - Viagens</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+
+        <div class="barra-menu"></div>
+
+        <nav class="navbar navbar-expand-sm border-botton navbar-light">
+            <div class="container">
+                <div class="logo" >
+                    <h1>
+                        <a id="logo" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Rot@@ 46</a>
+                    </h1>
+                </div>
+                
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div  class="navbar-collapse collapse d-sm-inline-flex ">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li style="width:100%"></li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Destino" asp-action="Lista_destino">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Destino" asp-action="Lista_promocao">Promoções</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Contato">Contato</a>
+                        </li>
+                  
+                   
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn btn-success text-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Gerenciar
+
+                                </button>
+                                    <div class="dropdown-menu bg-success text-light shadow " aria-labelledby="dropdownMenuButton">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Cliente" asp-action="Index">Clientes</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Destino" asp-action="Index">Destinos</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Pacote" asp-action="Index">Pacotes</a>
+                                    </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-light">
+        <div style="text-align:right; padding-right:20px;">
+            &copy; 2021 Rota 46 - Todos os direitos reservados.
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

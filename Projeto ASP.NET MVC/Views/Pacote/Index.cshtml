@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CRUDMVC.Models.Pacote>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    <h1 class="titulo-paginas">Lista de pacotes</h1>
+
+    <p>
+        <a class="btn btn-success" asp-action="Create">Adicionar novo</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id cliente
+                </th>
+                <th>
+                    Id destino
+                </th>
+                <th>
+                    Data da compra
+                </th>
+                <th>
+                    Data da viagem
+                </th>
+                <th>
+                    Preço
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id_cliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id_destino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCompra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataViagem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Editar</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>

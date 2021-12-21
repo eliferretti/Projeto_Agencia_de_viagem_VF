@@ -1,0 +1,65 @@
+﻿@model CRUDMVC.Models.Destino
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container">
+<h1 class="titulo-paginas">Novo destino</h1>
+
+<h4>Destino</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-md-6">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-12">
+                <label asp-for="Descricao" class="control-label"></label>
+                <textarea asp-for="Descricao" class="form-control"></textarea>
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+             
+            <div class="form-group col-md-3">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select class="custom-select" asp-for="Tipo">
+                    <option selected>-</option>
+                    <option>Nac</option>
+                    <option>Int</option>
+                </select>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Promo" class="control-label"></label>
+                <select class="custom-select" asp-for="Promo">
+                    <option selected>-</option>
+                    <option>Sim</option>
+                    <option>Não</option>
+                </select>
+                <span asp-validation-for="Promo" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-3">
+                <label asp-for="Preco" class="control-label"></label>
+                <input asp-for="Preco" class="form-control" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="submit" value="Adicionar" class="btn btn-success" style="width:auto"/>
+                <a class="btn btn-primary" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+</div>
+
+

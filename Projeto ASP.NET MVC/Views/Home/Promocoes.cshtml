@@ -1,0 +1,31 @@
+﻿@model CRUDMVC.Models.Destino;
+
+@{
+    ViewData["Title"] = "Promoções";
+    var promocoes = ViewData["promocoes"] as List<Destino>;
+}
+
+
+<div class="container">
+
+    <h1 class="titulo-paginas text-center">Conheça nossos @ViewData["Title"]</h1>
+
+
+     <div class="row">
+        <main class="d-flex flex-wrap justify-content-around col-sm-12">
+ @{              
+    foreach (var promocao in promocoes)
+    {           
+        <div class="col-sm-3">
+            <div class="bg-light text-center rounded m-2 rounded" style="box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.171);">
+                <img src="/imagens/turismo.jpg" class="img-fluid mx-auto d-block rounded"/>
+                <h4 class="px-1">@promocao.Titulo</h4>
+                <p class="px-1 mh-100"> @promocao.Descricao</p>
+                <p class="px-1 py-2 bg-danger text-light">Apenas <strong>R$@promocao.Preco</strong></p>
+            </div>
+        </div>                 
+    }
+ }
+         </main>
+    </div>
+</div>
